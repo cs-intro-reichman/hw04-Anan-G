@@ -1,6 +1,5 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        
 
     }
     
@@ -26,42 +25,34 @@ public class ArrayOps {
 
     public static int secondMaxValue(int [] array) {
         
-        int [] arr2 = new int [array.length];
         int max = array[0];
-        int maxIndex;
-        int secondMax = arr2[0];
-        int repetitionCounter = 0;
+        int maxIndex = 0;
+        int secondMax = array[0];
     
         for (int i = 0; i < array.length; i++){
 
-            if (array[i] > max)    max = array[i];
-
-            if (i == array.length-1) {
-
+            if (array[i] > max) {  
+                
+                max = array[i];
                 maxIndex = i;
 
             }
 
-        }
+            if (i == array.length-1) {
+                
+                array[maxIndex] = 0;
+                
+                for (int j = 0; j < array.length; j++){
 
-        for (int l = 0; l < array.length; l++){
+                    if (array[j] > secondMax) {
 
-            if(array[l] == max)     repetitionCounter++;
+                        secondMax = array[j];
+                        
+                    }
 
-            if(repetitionCounter > 1)        return max;
+                }
 
-        }
-
-        for (int j = 0; j < arr2.length; j++){
-
-            if (array[j] != max)      arr2[j] = array[j];
-
-        }
-
-        for (int i = 0; i < arr2.length; i++){
-
-            if (arr2[i] > secondMax)    secondMax = arr2[i];
-
+            }
         }
 
         return secondMax;
