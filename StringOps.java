@@ -23,11 +23,34 @@ public class StringOps {
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
         
+        System.out.println(capVowelsLowRest("heLLo WorLD"));
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+
+        String newS = "";
+        char C;
+
+        for (int i = 0; i < string.length(); i++){
+
+            if (string.charAt(i) >= 97 && string.charAt(i) <= 122 || string.charAt(i) == 32){
+            
+                    newS += string.charAt(i);
+                
+                }
+                else {
+
+                    C = string.charAt(i);
+                    C += 32;
+                    newS += C;
+
+                }
+
+            
+
+        }
+
+        return newS;
     }
 
     public static String camelCase (String string) {

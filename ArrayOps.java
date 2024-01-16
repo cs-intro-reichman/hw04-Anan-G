@@ -1,11 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
         
-        System.out.println(isSorted(new int[] {7, 5, 4, 3, -12}));
-        System.out.println(isSorted(new int[] {1, 2, 3})); // true
-        System.out.println(isSorted(new int[] {1, -2, 3})); // false
-        System.out.println(isSorted(new int[] {1, 1, 500})); // true
-        System.out.println(isSorted(new int[] {1, 3, 2})); // false
+
     }
     
     public static int findMissingInt(int [] array) {
@@ -32,12 +28,19 @@ public class ArrayOps {
         
         int [] arr2 = new int [array.length];
         int max = array[0];
+        int maxIndex;
         int secondMax = arr2[0];
         int repetitionCounter = 0;
     
         for (int i = 0; i < array.length; i++){
 
             if (array[i] > max)    max = array[i];
+
+            if (i == array.length-1) {
+
+                maxIndex = i;
+
+            }
 
         }
 
@@ -101,7 +104,6 @@ public class ArrayOps {
 
     public static boolean isSorted(int [] array) {
 
-            //increasing 
             if (array[0] < array [1]){
 
                 for (int i = 2; i < array.length; i++){
@@ -117,7 +119,6 @@ public class ArrayOps {
             }
 
 
-            //decreasing
             if (array[0] > array[1]){
 
                 for (int i = 2; i < array.length; i++){
